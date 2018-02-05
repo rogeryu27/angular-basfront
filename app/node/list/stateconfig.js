@@ -4,10 +4,11 @@ class addNodeController{
 
 
 class NodeListController {
-	constructor(nodeList, $mdToast, $mdDialog){
+	constructor(nodeList, $mdToast, $mdDialog, $mdMenu) {
 		this.nodeList = nodeList;
 		this.mdToast = $mdToast;
 		this.mdDialog = $mdDialog;
+		this.mdMenu = $mdMenu;
 	}
 
 	selectedRowCallback(rows){
@@ -17,6 +18,10 @@ class NodeListController {
                 .hideDelay(3000)
         );
     };
+
+    openMenu(ev) {
+    	this.mdMenu.open(ev);
+    }
 
     addNode(ev){
     	this.mdDialog.show({

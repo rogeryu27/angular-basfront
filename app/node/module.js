@@ -7,7 +7,11 @@ function nodeListResource($resource){
 }
 
 function nodeResource($resource, $stateParams){
-	return $resource('api/v1/node/{${$stateParams.objectName}')
+	return $resource('api/v1/node/{${$stateParams.objectName}');
+}
+
+const operationMenuComponent = {
+	templateUrl: 'node/list/operation_menu.html',
 }
 
 export default angular
@@ -18,6 +22,7 @@ export default angular
 	'mdDataTable',
 ])
 .config(stateConfig)
+.component('barOperationMenu', operationMenuComponent)
 .factory('basNodeListResource', nodeListResource)
 .factory('basNodeResource', nodeResource);
 

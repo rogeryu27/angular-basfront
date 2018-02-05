@@ -33,13 +33,14 @@
   <mdt-cell>{{node.age}}</mdt-cell>
 </mdt-row> -->
     
-  <mdt-custom-cell column-key="name">
-    <md-button ui-sref="nodeDetailState">aa</md-button>
-  </mdt-custom-cell>
    <mdt-custom-cell column-key="status">
       <div layout="row">
 <!--         <span>Creating:</span> -->
         <md-progress-linear md-mode="indeterminate"></md-progress-linear>
       </div>
+  </mdt-custom-cell>
+
+  <mdt-custom-cell column-key="operations">
+    <bar-operation-menu></bar-operation-menu>
   </mdt-custom-cell>
 </mdt-table>
