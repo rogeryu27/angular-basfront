@@ -19,7 +19,7 @@ export default angular
 ])
 .config(stateConfig)
 .factory('basNodeListResource', nodeListResource)
-.factory('baseNodeResource', nodeResource);
+.factory('basNodeResource', nodeResource);
 
 function stateConfig($stateProvider){
 	$stateProvider.state('nodeState', {

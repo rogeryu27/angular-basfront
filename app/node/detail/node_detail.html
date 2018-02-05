@@ -1,21 +1,16 @@
 <md-content class="md-padding">
     <md-nav-bar
-      md-no-ink-bar="disableInkBar"
       md-selected-nav-item="currentNavItem"
       nav-bar-aria-label="navigation links">
-      <md-nav-item md-nav-click="goto('page1')" name="page1">
-        Page One
+      <md-nav-item md-nav-click="" name="page1">
+        Basic Info
       </md-nav-item>
-      <md-nav-item md-nav-click="goto('page2')" name="page2">
-        Page Two
+      <md-nav-item md-nav-click="" name="page2">
+        Custom Parameters
       </md-nav-item>
-      <md-nav-item md-nav-click="goto('page3')" name="page3">
-        Page Three
+      <md-nav-item md-nav-click="" name="page3">
+        Monitor
       </md-nav-item>
     </md-nav-bar>
-    <span>{{status}}</span>
-    <div class="ext-content">
-      External content for `<span>{{currentNavItem}}</span>`.
-    </div>
-    <md-checkbox ng-model="disableInkBar">Disable Ink Bar</md-checkbox>
+    <ui-view></ui-view>
 </md-content>

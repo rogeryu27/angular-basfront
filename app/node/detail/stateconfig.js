@@ -22,11 +22,11 @@ export const nodeDetailConfig = {
 			'': {
                 controller: NodeDetailController,
                 controllerAs: '$ctrl',
-				templateUrl: 'node/list/node_detail.html',
+				templateUrl: 'node/detail/node_detail.html',
 			},
 		},
 }
 
-function getNodeDetail(nodeDetailResource, $stateParams){
-	return nodeDetailResource.query();
+function getNodeDetail(basNodeResource, $stateParams){
+	return basNodeResource.query();
 }

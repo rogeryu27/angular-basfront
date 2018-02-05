@@ -1,1 +1,1 @@
-[{"id":1, "name":"test", "node_url":"1"}]
+[{"id":1, "name":"test", "ip_address":"10.108.126.4", "labels":"test", "cpu_limits":"100", "memory_limits":"100", "age":"1"}]

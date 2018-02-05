@@ -31,5 +31,5 @@ function themeConfig($mdThemingProvider){
 }
 
 function routeConfig($urlRouterProvider){
- 	$urlRouterProvider.otherwise('/index');
+ 	$urlRouterProvider.otherwise('/nodes/detail');
 }

@@ -4,7 +4,10 @@
          paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,100]}"
          selectable-rows="true"
          alternate-headers="'contextual'"
-         selected-row-callback=$ctrl.selectedRowCallback(rows)>
+         selected-row-callback=$ctrl.selectedRowCallback(rows)
+         mdt-row="{'data': $ctrl.nodeList,
+                      'table-row-id-key': 'id',
+                      'column-keys': ['name', 'ip_address', 'labels', 'status', 'cpu_limits', 'memory_limits', 'age', 'operations']}">
 
 <mdt-header-row>
   <mdt-column align-rule="left">Name</mdt-column>
@@ -16,16 +19,27 @@
   <mdt-column align-rule="right">Age</mdt-column>
   <mdt-column align-rule="right">Operations</mdt-column>
 </mdt-header-row>
-<mdt-row 
+<!-- <mdt-row 
          ng-repeat="node in $ctrl.nodeList"
          table-row-id="node.id">
+
   <mdt-cell>{{node.name}}</mdt-cell>
   <mdt-cell>{{node.ip_address}}</mdt-cell>
   <mdt-cell>{{node.labels}}</mdt-cell>
-  <mdt-cell>{{node.status}}</mdt-cell>
+  <mdt-cell><md-progress-linear md-mode="indeterminate"></md-progress-linear></mdt-cell>
   <mdt-cell>{{node.cpu_limits}}</mdt-cell>
   <mdt-cell>{{node.memory_limits}}</mdt-cell>
   <mdt-cell>{{node.age}}</mdt-cell>
   <mdt-cell>{{node.age}}</mdt-cell>
-</mdt-row>
-</mdt-table>  
+</mdt-row> -->
+    
+  <mdt-custom-cell column-key="name">
+    <md-button ui-sref="nodeDetailState">aa</md-button>
+  </mdt-custom-cell>
+   <mdt-custom-cell column-key="status">
+      <div layout="row">
+<!--         <span>Creating:</span> -->
+        <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+      </div>
+  </mdt-custom-cell>
+</mdt-table>
