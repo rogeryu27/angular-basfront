@@ -1,0 +1,86 @@
+<!--   TopBar -->
+<md-toolbar layout="row" class="bas-toolbar">
+  <div class="md-toolbar-tools">
+    <md-button ui-sref="baseState" class="menu md-icon-button">
+      <md-icon md-svg-icon="assets/images/bas-logo.svg"></md-icon>
+    </md-button>
+<!--       <div class="bas-logo-bar">
+      <a href="">
+        <md-icon md-svg-icon="assets/images/bas-logo.svg"></md-icon>
+      </a>
+    </div> -->
+    <div class="bas-title">
+      <h1>Boundless Application System</h1>
+    </div>
+
+    <bar-search class="bar-search-bar"></bar-search>
+
+    <bar-user-panel></bar-user-panel>
+  </div>
+</md-toolbar>
+
+<md-content flex layout="row">
+  <md-sidenav style="width:220px;" layout="column" md-is-locked-open="true" class="md-whiteframe-4dp md-sidenav-left">
+    <md-list>
+      <md-list-item flex layout="row">
+      <md-button style="min-width:0px"><md-icon md-svg-icon="assets/images/sidebar.svg"></md-icon>
+      <md-button ui-sref="overviewState" style="text-align:left;">Overview</md-button>
+      </md-list-item>
+      <md-list-item >
+      <md-button style="min-width:0px"><md-icon md-svg-icon="assets/images/sidebar.svg"></md-icon>
+      <md-button ui-sref="nodeListState" style="text-align:left;">Nodes</md-button>
+      </md-list-item>
+      <md-list-item >
+      <md-button style="min-width:0px"><md-icon md-svg-icon="assets/images/sidebar.svg"></md-icon>
+      <md-button ui-sref="jobListState" style="text-align:left;">Jobs</md-button>
+      </md-list-item>
+      <md-list-item >
+      <md-button style="min-width:0px"><md-icon md-svg-icon="assets/images/sidebar.svg"></md-icon>
+      <md-button ui-sref="monitorState" style="text-align:left;">Monitor</md-button>
+      </md-list-item>
+      <md-list-item >
+      <md-button style="min-width:0px"><md-icon md-svg-icon="assets/images/sidebar.svg"></md-icon>
+      <md-button ui-sref="" style="text-align:left;">Service</md-button>
+      </md-list-item>
+      <md-list-item >
+      <md-button style="min-width:0px"><md-icon md-svg-icon="assets/images/sidebar.svg"></md-icon>
+      <md-button ui-sref="" style="text-align:left;">Version Control</md-button>
+      </md-list-item>
+      <md-list-item >
+      <md-button style="min-width:0px"><md-icon md-svg-icon="assets/images/sidebar.svg"></md-icon>
+      <md-button ui-sref="" style="text-align:left;">Settings</md-button>
+      </md-list-item>
+      <md-list-item >
+      <md-button style="min-width:0px"><md-icon md-svg-icon="assets/images/sidebar.svg"></md-icon>
+      <md-button ui-sref="" style="text-align:left;">About</md-button>
+      </md-list-item>
+      <md-list-item ><md-button ui-sref="" style="text-align:left;"></md-button></md-list-item>
+      <md-list-item ><md-button ui-sref="" style="text-align:left;"></md-button></md-list-item>
+      <md-list-item ><md-button ui-sref="" style="text-align:left;"></md-button></md-list-item>
+      <md-list-item ><md-button ui-sref="" style="text-align:left;"></md-button></md-list-item>
+      <md-list-item ><md-button ui-sref="" style="text-align:left;"></md-button></md-list-item>
+      <md-list-item ><md-button ui-sref="" style="text-align:left;"></md-button></md-list-item>
+      <md-list-item ><md-button ui-sref="" style="text-align:left;"></md-button></md-list-item>
+    </md-list>
+  </md-sidenav>
+  <md-content flex id="content" class="bar-main-content-box">
+    <div ng-switch="$ctrl.loading"
+           class="bar-content-div-filled bar-main-content-div">
+      <div ng-switch-when="true"
+             class="bar-spinner">
+        <md-progress-circular ng-if="$ctrl.showLoadingSpinner"
+                                md-mode="indeterminate"
+                                md-diameter="48">
+        </md-progress-circular>
+      </div>
+      <div ng-switch-when="false"
+             class="bar-app-content">
+        
+      </div>
+    </div>
+    <div ui-view></div>
+  </md-content>
+</md-content>
+
+<div class="footer">
+</div>

@@ -1,0 +1,31 @@
+<md-button>Add Current Node</md-button>
+<md-button ng-click=$ctrl.addNode($event)>Add Nodes</md-button>
+<mdt-table table-card="{visible: true, title: 'Nodes', actionIcons: true}"
+         paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,100]}"
+         selectable-rows="true"
+         alternate-headers="'contextual'"
+         selected-row-callback=$ctrl.selectedRowCallback(rows)>
+
+<mdt-header-row>
+  <mdt-column align-rule="left">Name</mdt-column>
+  <mdt-column align-rule="right">IP Address</mdt-column>
+  <mdt-column align-rule="right">Labels</mdt-column>
+  <mdt-column align-rule="right">Status</mdt-column>
+  <mdt-column align-rule="right">CPU limits</mdt-column>
+  <mdt-column align-rule="right">Memory limits</mdt-column>
+  <mdt-column align-rule="right">Age</mdt-column>
+  <mdt-column align-rule="right">Operations</mdt-column>
+</mdt-header-row>
+<mdt-row 
+         ng-repeat="node in $ctrl.nodeList"
+         table-row-id="node.id">
+  <mdt-cell>{{node.name}}</mdt-cell>
+  <mdt-cell>{{node.ip_address}}</mdt-cell>
+  <mdt-cell>{{node.labels}}</mdt-cell>
+  <mdt-cell>{{node.status}}</mdt-cell>
+  <mdt-cell>{{node.cpu_limits}}</mdt-cell>
+  <mdt-cell>{{node.memory_limits}}</mdt-cell>
+  <mdt-cell>{{node.age}}</mdt-cell>
+  <mdt-cell>{{node.age}}</mdt-cell>
+</mdt-row>
+</mdt-table>  

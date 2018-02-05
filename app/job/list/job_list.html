@@ -1,0 +1,21 @@
+<md-button ng-click=$ctrl.addJob($event)>Create Job</md-button>
+<mdt-table table-card="{visible: true, title: 'Jobs'}"
+         selectable-rows="true"
+         alternate-headers="'contextual'"
+         selected-row-callback="selectedRowCallback(rows)">
+
+<mdt-header-row>
+  <mdt-column align-rule="left">Name</mdt-column>
+  <mdt-column align-rule="right">Status</mdt-column>
+  <mdt-column align-rule="right">Age</mdt-column>
+  <mdt-column align-rule="right">Operations</mdt-column>
+</mdt-header-row>
+<mdt-row 
+         ng-repeat="job in $ctrl.jobList"
+         table-row-id="job.id">
+  <mdt-cell>{{job.name}}</mdt-cell>
+  <mdt-cell>{{job.status}}</mdt-cell>
+  <mdt-cell>{{job.age}}</mdt-cell>
+  <mdt-cell>{{job.age}}</mdt-cell>
+</mdt-row>
+</mdt-table>
